@@ -13,14 +13,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @list = List.find(params[:list_id])
+    @bookmark = Bookmark.find(params[:list_id])
     @bookmark.destroy
-    redirect_to lists_path, status: :see_other
+    redirect_to list_bookmark_path, status: :see_other
   end
-
-
-
-
 
   private
 
